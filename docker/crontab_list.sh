@@ -156,3 +156,5 @@
 10 10 1-20 * * node /scripts/jd_zooMap.js >> /scripts/logs/jd_zooMap.log 2>&1
 #京东价格保护
 5 0 * * * node /scripts/jd_priceProtect.js >> /scripts/logs/jd_priceProtect.log 2>&1
+#柠檬我是大老板农场
+5 0-23/6 * * * node /scripts/jd_wsdlb.js >> /scripts/logs/jd_wsdlb.log 2>&1
