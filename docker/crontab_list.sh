@@ -139,3 +139,20 @@
 15 0,12,22 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 #京喜牧场
 15 0,12,22 * * * node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
+
+#半点京豆雨
+30 16-23/1 * * * node /scripts/long_half_redrain.js >> /scripts/logs/long_half_redrain.log 2>&1
+#618限时盲盒
+30 7,19 1-18 6 * node /scripts/jd_limitBox.js >> /scripts/logs/jd_limitBox.log 2>&1
+#特物Z|万物皆可国创
+30 11 1-18 6 * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
+#浓情618 与“粽”不同
+15 13 1-18 6 * node /scripts/zooLongzhou.js >> /scripts/logs/zooLongzhou.log 2>&1
+#618竞猜
+5 0 * * * node /scripts/zy_618jc.js >> /scripts/logs/zy_618jc.log 2>&1
+#京享值pk
+15 0,6,13,19,21 1-20 * * node /scripts/ddo_pk.js >> /scripts/logs/ddo_pk.log 2>&1
+#动物联盟做图鉴任务
+10 10 1-20 * * node /scripts/jd_zooMap.js >> /scripts/logs/jd_zooMap.log 2>&1
+#京东价格保护
+5 0 * * * node /scripts/jd_priceProtect.js >> /scripts/logs/jd_priceProtect.log 2>&1
