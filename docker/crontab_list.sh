@@ -158,3 +158,5 @@
 5 0-23/6 * * * node /scripts/jd_wsdlb.js >> /scripts/logs/jd_wsdlb.log 2>&1
 #柠檬全民挖现金
 0 10 * * * node /scripts/jd_qmwxj.js >> /scripts/logs/jd_qmwxj.log 2>&1
+#粽情端午
+15 13 6-18 6 * node /scripts/zooLongzhou02.js >> /scripts/logs/zooLongzhou02.log 2>&1
