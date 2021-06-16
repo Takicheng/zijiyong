@@ -144,8 +144,6 @@
 30 16-23/1 * * * node /scripts/long_half_redrain.js >> /scripts/logs/long_half_redrain.log 2>&1
 #618限时盲盒
 30 7,19 1-18 6 * node /scripts/jd_limitBox.js >> /scripts/logs/jd_limitBox.log 2>&1
-#特物Z|万物皆可国创
-30 11 1-18 6 * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 #浓情618 与“粽”不同
 15 13 1-18 6 * node /scripts/zooLongzhou.js >> /scripts/logs/zooLongzhou.log 2>&1
 #618竞猜
