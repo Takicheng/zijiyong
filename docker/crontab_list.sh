@@ -18,22 +18,10 @@
 
 #手机狂欢城
 0 0,12,18,21 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
-#618动物联萌
-33 0,6-23/2 * * * node /scripts/jd_zoo.js >> /scripts/logs/jd_zoo.log 2>&1
-#618动物联萌专门收集金币(每小时的第30分运行一次)
-0-59/30 * * * * node /scripts/jd_zooCollect.js >> /scripts/logs/jd_zooCollect.log 2>&1
-#家电星推官 活动时间：2021年5月27日 00:00:00-2021年6月18日 23:59:59
-0 0 * * * node /scripts/jd_xtg.js >> /scripts/logs/jd_xtg.log 2>&1
-#家电星推官好友互助 活动时间：2021年5月27日 00:00:00-2021年6月18日 23:59:59
-0 0 * * * node /scripts/jd_xtg_help.js >> /scripts/logs/jd_xtg_help.log 2>&1
 #金榜创造营 活动时间：2021-05-21至2021-12-31
 0 1,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 #5G超级盲盒(活动时间：2021-06-2到2021-07-31)
 0 0-23/4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
-#明星小店(星店长，2021-06-10)
-0 1,21 * * * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
-#新潮品牌狂欢（6.18过期）
-20 1,21 * * * node /scripts/jd_mcxhd.js >> /scripts/logs/jd_mcxhd.log 2>&1
 #京喜领88元红包(6.31到期)
 30 1,6,12,21 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 #省钱大赢家之翻翻乐
@@ -140,33 +128,27 @@
 
 #半点京豆雨
 30 16-23/1 * * * node /scripts/long_half_redrain.js >> /scripts/logs/long_half_redrain.log 2>&1
-#618限时盲盒
-30 7,19 1-18 6 * node /scripts/jd_limitBox.js >> /scripts/logs/jd_limitBox.log 2>&1
-#浓情618 与“粽”不同
-15 13 1-18 6 * node /scripts/zooLongzhou.js >> /scripts/logs/zooLongzhou.log 2>&1
-#618竞猜
-5 0 * * * node /scripts/zy_618jc.js >> /scripts/logs/zy_618jc.log 2>&1
 #京享值pk
 15 0,6,13,19,21 1-20 * * node /scripts/ddo_pk.js >> /scripts/logs/ddo_pk.log 2>&1
-#动物联盟做图鉴任务
-10 10 1-20 * * node /scripts/jd_zooMap.js >> /scripts/logs/jd_zooMap.log 2>&1
 #京东价格保护
 5 0 * * * node /scripts/jd_priceProtect.js >> /scripts/logs/jd_priceProtect.log 2>&1
 #柠檬我是大老板农场
 5 0-23/6 * * * node /scripts/jd_wsdlb.js >> /scripts/logs/jd_wsdlb.log 2>&1
 #柠檬全民挖现金
 0 10 * * * node /scripts/jd_qmwxj.js >> /scripts/logs/jd_qmwxj.log 2>&1
-#粽情端午
-15 13 6-18 6 * node /scripts/zooLongzhou02.js >> /scripts/logs/zooLongzhou02.log 2>&1
 #翻翻乐
 1 6-21/1 * 6 * node /scripts/jd_618redpacket.js >> /scripts/logs/jd_618redpacket.log 2>&1
 #东东乐园
 30 7 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
-#新潮品牌狂欢
-30 9,10 1-18 6 * node /scripts/jd_mcxhd_brandcity.js >> /scripts/logs/jd_mcxhd_brandcity.log 2>&1
 #东东电竞经理
 15 10 * * * node /scripts/zooElecsport.js >> /scripts/logs/zooElecsport.log 2>&1
 #京喜工厂2
 10 * * * * node /scripts/jd_dreamFactory2.js >> /scripts/logs/jd_dreamFactory2.log 2>&1
 #东东农场2
 5 6-18/6 * * * node /scripts/jd_fruit2.js >> /scripts/logs/jd_fruit2.log 2>&1
+#环境测试
+0 12 * * * node /scripts/jd_api_test.js >> /scripts/logs/jd_api_test.log 2>&1
+#京东到家果园
+10 0,3,8,11,17 * * * node /scripts/jddj_fruit.js >> /scripts/logs/jddj_fruit.log 2>&1
+#限时盲盒
+15 12 1-18 6 * node /scripts/zooLimitbox.js >> /scripts/logs/zooLimitbox.log 2>&1
