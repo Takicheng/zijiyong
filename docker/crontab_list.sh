@@ -154,3 +154,9 @@
 36 0,6-23/2 * * * node /scripts/jd_zoo.js >> /scripts/logs/jd_zoo.log 2>&1
 #京东到家鲜豆
 10 0 * * * node /scripts/jddj_bean.js >> /scripts/logs/jddj_bean.log 2>&1
+#京东到家果园水车收水滴
+*/5 * * * * node /scripts/jddj_fruit_collectWater.js >> /scripts/logs/jddj_fruit_collectWater.log 2>&1
+#京东到家鲜豆庄园收水滴
+*/5 * * * * node /scripts/jddj_getPoints.js >> /scripts/logs/jddj_getPoints.log 2>&1
+#京东到家鲜豆庄园
+10 0 * * * node /scripts/jddj_plantBeans.js >> /scripts/logs/jddj_plantBeans.log 2>&1
