@@ -24,8 +24,6 @@
 0 0-23/4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 #京喜领88元红包(6.31到期)
 30 1,6,12,21 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
-#省钱大赢家之翻翻乐
-10,40 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 ##############长期活动##############
 # 签到
 7 0,17 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
@@ -150,5 +148,9 @@
 0 12 * * * node /scripts/jd_api_test.js >> /scripts/logs/jd_api_test.log 2>&1
 #京东到家果园
 10 0,3,8,11,17 * * * node /scripts/jddj_fruit.js >> /scripts/logs/jddj_fruit.log 2>&1
-#限时盲盒
-15 12 1-18 6 * node /scripts/zooLimitbox.js >> /scripts/logs/zooLimitbox.log 2>&1
+#618限时盲盒
+30 7,19 1-18 6 * node /scripts/jd_limitBox.js >> /scripts/logs/jd_limitBox.log 2>&1
+#618动物联萌
+36 0,6-23/2 * * * node /scripts/jd_zoo.js >> /scripts/logs/jd_zoo.log 2>&1
+#京东到家鲜豆
+10 0 * * * node /scripts/jddj_bean.js >> /scripts/logs/jddj_bean.log 2>&1
