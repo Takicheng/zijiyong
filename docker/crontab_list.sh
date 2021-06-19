@@ -144,14 +144,8 @@
 10 * * * * node /scripts/jd_dreamFactory2.js >> /scripts/logs/jd_dreamFactory2.log 2>&1
 #东东农场2
 5 6-18/6 * * * node /scripts/jd_fruit2.js >> /scripts/logs/jd_fruit2.log 2>&1
-#环境测试
-0 12 * * * node /scripts/jd_api_test.js >> /scripts/logs/jd_api_test.log 2>&1
 #京东到家果园
 10 0,3,8,11,17 * * * node /scripts/jddj_fruit.js >> /scripts/logs/jddj_fruit.log 2>&1
-#618限时盲盒
-30 7,19 1-18 6 * node /scripts/jd_limitBox.js >> /scripts/logs/jd_limitBox.log 2>&1
-#618动物联萌
-36 0,6-23/2 * * * node /scripts/jd_zoo.js >> /scripts/logs/jd_zoo.log 2>&1
 #京东到家鲜豆
 10 0 * * * node /scripts/jddj_bean.js >> /scripts/logs/jddj_bean.log 2>&1
 #京东到家果园水车收水滴

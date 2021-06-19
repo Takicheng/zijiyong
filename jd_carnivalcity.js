@@ -14,22 +14,19 @@ d、 30000名之外，0京豆
 ===================quantumultx================
 [task_local]
 #京东手机狂欢城
-0 0-18/6 * * * jd_carnivalcity.js, tag=京东手机狂欢城, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+0 0-18/6 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_carnivalcity.js, tag=京东手机狂欢城, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 =====================Loon================
 [Script]
-cron "0 0-18/6 * * *" script-path=jd_carnivalcity.js, tag=京东手机狂欢城
+cron "0 0-18/6 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_carnivalcity.js, tag=京东手机狂欢城
 
 ====================Surge================
-京东手机狂欢城 = type=cron,cronexp=0 0-18/6 * * *,wake-system=1,timeout=3600,script-path=jd_carnivalcity.js
+京东手机狂欢城 = type=cron,cronexp=0 0-18/6 * * *,wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_carnivalcity.js
 
 ============小火箭=========
-5G狂欢城 = type=cron,script-path=jd_carnivalcity.js, cronexpr="0 0,6,12,18 * * *", timeout=3600, enable=true
+5G狂欢城 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_carnivalcity.js, cronexpr="0 0,6,12,18 * * *", timeout=3600, enable=true
 */
 const $ = new Env('京东手机狂欢城');
-
-console.log('\n====================Hello World====================\n')
-
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -64,7 +61,7 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
     if ($.isNode()) await notify.sendNotify($.name + '活动已结束', `请删除此脚本\n咱江湖再见`);
     return
   }
-  await updateShareCodesCDN('');
+  await updateShareCodesCDN();
   await requireConfig();
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -113,7 +110,7 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
         }
       }
       if ($.canHelp) {
-        console.log(`\n\n如果有剩余助力机会，则给作者以及随机码助力`)
+        console.log(`\n\n如果有剩余助力机会，则给作者lxk0301以及随机码助力`)
         await doHelp();
       }
     }
@@ -726,7 +723,7 @@ function getListRank() {
   })
 }
 
-function updateShareCodesCDN(url) {
+function updateShareCodesCDN(url = 'https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/jd_cityShareCodes.json') {
   return new Promise(resolve => {
     $.get({url , headers:{"User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")}, timeout: 200000}, async (err, resp, data) => {
       try {
@@ -745,29 +742,7 @@ function updateShareCodesCDN(url) {
   })
 }
 
-function readShareCode() {
-  console.log(`开始`)
-  return new Promise(async resolve => {
-    $.get({url: `http://api.sharecode.ga/api/carnivalcity/20`, 'timeout': 20000}, (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
-        } else {
-          if (data) {
-            data = JSON.parse(data);
-          }
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve(data);
-      }
-    })
-    await $.wait(20000);
-    resolve()
-  })
-}
+
 //格式化助力码
 function shareCodesFormat() {
   return new Promise(async resolve => {
@@ -775,15 +750,16 @@ function shareCodesFormat() {
     $.newShareCodes = [];
     if ($.shareCodesArr[$.index - 1]) {
       $.newShareCodes = $.shareCodesArr[$.index - 1].split('@');
-    } else {
-      console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
-      const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
-      $.newShareCodes = inviteCodes[tempIndex] && inviteCodes[tempIndex].split('@') || [];
-      if ($.updatePkActivityIdRes && $.updatePkActivityIdRes.length) $.newShareCodes = [...$.updatePkActivityIdRes, ...$.newShareCodes];
-    }
-    const readShareCodeRes = await readShareCode();
-    if (readShareCodeRes && readShareCodeRes.code === 200) {
-      $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
+    } 
+    //else {
+      //console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
+     // const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
+      //$.newShareCodes = inviteCodes[tempIndex] && inviteCodes[tempIndex].split('@') || [];
+     // if ($.updatePkActivityIdRes && $.updatePkActivityIdRes.length) $.newShareCodes = [...$.updatePkActivityIdRes, ...$.newShareCodes];
+    //}
+   // const readShareCodeRes = await readShareCode();
+    //if (readShareCodeRes && readShareCodeRes.code === 200) {
+      //$.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
     }
     // console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify($.newShareCodes)}`)
     resolve();
