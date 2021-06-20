@@ -131,7 +131,7 @@
 #京东价格保护
 5 0 * * * node /scripts/jd_priceProtect.js >> /scripts/logs/jd_priceProtect.log 2>&1
 #柠檬我是大老板农场
-5 0-23/6 * * * node /scripts/jd_wsdlb.js >> /scripts/logs/jd_wsdlb.log 2>&1
+30 */1 * * * node /scripts/jd_wsdlb.js >> /scripts/logs/jd_wsdlb.log 2>&1
 #柠檬全民挖现金
 0 10 * * * node /scripts/jd_qmwxj.js >> /scripts/logs/jd_qmwxj.log 2>&1
 #翻翻乐
@@ -156,3 +156,5 @@
 10 0 * * * node /scripts/jddj_plantBeans.js >> /scripts/logs/jddj_plantBeans.log 2>&1
 #ck检查
 */60 * * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
+#京喜签到
+5 0 * * * node /scripts/jx_sign.js >> /scripts/logs/jx_sign.log 2>&1
