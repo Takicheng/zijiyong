@@ -126,8 +126,6 @@
 
 #半点京豆雨
 30 16-23/1 * * * node /scripts/long_half_redrain.js >> /scripts/logs/long_half_redrain.log 2>&1
-#京享值pk
-15 0,6,13,19,21 1-20 * * node /scripts/ddo_pk.js >> /scripts/logs/ddo_pk.log 2>&1
 #京东价格保护
 5 0 * * * node /scripts/jd_priceProtect.js >> /scripts/logs/jd_priceProtect.log 2>&1
 #柠檬我是大老板农场
