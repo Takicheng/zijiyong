@@ -156,3 +156,5 @@
 */60 * * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 #京喜签到
 5 0 * * * node /scripts/jx_sign.js >> /scripts/logs/jx_sign.log 2>&1
+#京享值PK
+15 3,6,13,19,21 * * * node /scripts/ddo_pk.js >> /scripts/logs/ddo_pk.log 2>&1
