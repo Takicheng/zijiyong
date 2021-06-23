@@ -163,4 +163,6 @@
 #宠汪汪二代兑换
 0 0-16/8 * * * node /scripts/jd_joy_reward_new.js >> /scripts/logs/jd_joy_reward_new.log 2>&1
 #京喜工厂开团
-0 0,2,4,6 * * * node /scripts/star_dreamFactory_tuan.js >> /scripts/logs/star_dreamFactory_tuan.log 2>&1
+0 1,2,3,4 * * * node /scripts/star_dreamFactory_tuan.js >> /scripts/logs/star_dreamFactory_tuan.log 2>&1
+# 京东试用
+30 10 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
