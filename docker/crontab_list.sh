@@ -160,3 +160,7 @@
 15 3,6,13,19,21 * * * node /scripts/ddo_pk.js >> /scripts/logs/ddo_pk.log 2>&1
 #宠汪汪二代
 45 */2,23 * * * node /scripts/jd_joy_new.js >> /scripts/logs/jd_joy_new.log 2>&1
+#宠汪汪二代兑换
+0 0-16/8 * * * node /scripts/jd_joy_reward_new.js >> /scripts/logs/jd_joy_reward_new.log 2>&1
+#京喜工厂开团
+0 0,2,4,6 * * * node /scripts/star_dreamFactory_tuan.js >> /scripts/logs/star_dreamFactory_tuan.log 2>&1
