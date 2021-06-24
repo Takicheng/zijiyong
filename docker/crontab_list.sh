@@ -135,7 +135,7 @@
 #东东乐园
 30 7 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
 #东东电竞经理
-15 10 * * * node /scripts/jd_EsportsManager.js >> /scripts/logs/jd_EsportsManager.log 2>&1
+0 0-23/2 * * * node /scripts/jd_dianjing.js >> /scripts/logs/jd_dianjing.log 2>&1
 #京喜工厂2
 10 * * * * node /scripts/jd_dreamFactory2.js >> /scripts/logs/jd_dreamFactory2.log 2>&1
 #东东农场2
@@ -161,8 +161,10 @@
 #宠汪汪二代兑换
 0 0-16/8 * * * node /scripts/jd_joy_reward_new.js >> /scripts/logs/jd_joy_reward_new.log 2>&1
 #京喜工厂开团
-0 1,2,3,4 * * * node /scripts/star_dreamFactory_tuan.js >> /scripts/logs/star_dreamFactory_tuan.log 2>&1
+0 1,2,3,4 * * * node /scripts/jd_dreamFactory_tuan.js >> /scripts/logs/jd_dreamFactory_tuan.log 2>&1
 # 京东试用
 30 10 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 #京喜财富岛
 5 8,13,19 * * * node /scripts/jd_cfd2.js >> /scripts/logs/jd_cfd2.log 2>&1
+#明星小店
+0 1,21 * * * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
