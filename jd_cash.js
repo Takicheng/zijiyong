@@ -29,7 +29,7 @@ let cookiesArr = [], cookie = '', message;
 let helpAuthor = true;
 const randomCount = $.isNode() ? 20 : 5;
 
-newShareCodes = [{"inviteCode":"eU9YaLrgZq0k-W6GmXUX0A"},{"inviteCode":"ch01a-S0ZvQi"}] //这里修改你的邀请码
+newShareCodes = [{"inviteCode":"eU9YaLrgZq0k-W6GmXUX0A"},{"inviteCode":"ch01a-S0ZvQi"},{"inviteCode":"eU9YaeqzbvlwoG-HySdFhw"}] 
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -201,7 +201,7 @@ async function helpFriends() {
 }
 function helpFriend(helpInfo) {
   return new Promise((resolve) => {
-    $.get(taskUrl("cash_mob_assist", {...helpInfo,"source":3,"shareDate":"IRs1bey0ZP8"}), (err, resp, data) => {
+    $.get(taskUrl("cash_mob_assist", {...helpInfo,"source":3,"shareDate":"IRs1bey0ZPg"}), (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
