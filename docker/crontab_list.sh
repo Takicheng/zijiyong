@@ -164,7 +164,9 @@
 0 1,2,3,4 * * * node /scripts/jd_dreamFactory_tuan.js >> /scripts/logs/jd_dreamFactory_tuan.log 2>&1
 # 京东试用
 30 10 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
-#京喜财富岛
+#京喜财富岛2
 5 8,13,19 * * * node /scripts/jd_cfd2.js >> /scripts/logs/jd_cfd2.log 2>&1
 #明星小店
 0 1,21 * * * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
+# 点点券
+40 0,20 * * * node /scripts/jd_necklace_new.js >> /scripts/logs/jd_necklace_new.log 2>&1
