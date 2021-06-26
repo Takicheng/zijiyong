@@ -137,7 +137,7 @@
 #东东电竞经理
 0 0-23/2 * * * node /scripts/jd_dianjing.js >> /scripts/logs/jd_dianjing.log 2>&1
 #京喜工厂2
-10 2/1 * * * node /scripts/jd_dreamFactory2.js >> /scripts/logs/jd_dreamFactory2.log 2>&1
+10 2-23/1 * * * node /scripts/jd_dreamFactory2.js >> /scripts/logs/jd_dreamFactory2.log 2>&1
 #东东农场2
 5 6-18/6 * * * node /scripts/jd_fruit2.js >> /scripts/logs/jd_fruit2.log 2>&1
 #京东到家果园
