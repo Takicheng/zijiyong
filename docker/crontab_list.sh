@@ -130,8 +130,6 @@
 30 */1 * * * node /scripts/jd_wsdlb.js >> /scripts/logs/jd_wsdlb.log 2>&1
 #柠檬全民挖现金
 0 10 * * * node /scripts/jd_qmwxj.js >> /scripts/logs/jd_qmwxj.log 2>&1
-#翻翻乐
-1 6-21/1 * 6 * node /scripts/jd_618redpacket.js >> /scripts/logs/jd_618redpacket.log 2>&1
 #东东乐园
 30 7 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
 #东东电竞经理
@@ -173,4 +171,4 @@
 #星系牧场
 #1 0-23/2 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
 #欧洲狂欢杯
-55 59 9  * * node /scripts/jd_europeancup.js >> /scripts/logs/jd_europeancup.log 2>&1
+57 59 9  * * * node /scripts/jd_europeancup.js >> /scripts/logs/jd_europeancup.log 2>&1
